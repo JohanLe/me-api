@@ -1,0 +1,18 @@
+
+CREATE TABLE IF NOT EXISTS users (
+    id VARCHAR(10) PRIMARY KEY NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    birthdate VARCHAR(12) NOT NULL,
+    fullname VARCHAR(255) NOT NULL,
+    UNIQUE(id),
+    UNIQUE(email)
+    );
+
+CREATE TABLE IF NOT EXISTS reports (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    week INT NOT NULL,
+    title VARCHAR(45),
+    text TEXT NOT NULL,
+    UNIQUE(week)
+    );
