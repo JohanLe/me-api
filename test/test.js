@@ -1,11 +1,11 @@
 var assert = require("assert");
-const reports = require('../routes/reports.js');
+var reports = require('../routes/reports.js');
 
 process.env.NODE_ENV = 'test';
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const server = require('../app.js')
+var chai = require('chai');
+var chaiHttp = require('chai-http');
+var server = require('../app.js')
 
 chai.should();
 

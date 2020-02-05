@@ -1,22 +1,22 @@
-const bodyParser = require("body-parser");
-const morgan = require('morgan');
-const cors = require('cors');
-const express = require("express");
+var bodyParser = require("body-parser");
+var morgan = require('morgan');
+var cors = require('cors');
+var express = require("express");
 
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const sqlite3 = require('sqlite3').verbose();
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
+var sqlite3 = require('sqlite3').verbose();
 
-const fn = require('./functions');
+var fn = require('./functions');
 
-const app = express();
-const port = 8333;
+var app = express();
+var port = 8333;
 
-const index = require('./routes/index.js');
-const reports = require('./routes/reports.js');
-const auth = require('./routes/auth.js');
+var index = require('./routes/index.js');
+var reports = require('./routes/reports.js');
+var auth = require('./routes/auth.js');
 
-const db = new sqlite3.Database('./db/texts.sqlite');
+var db = new sqlite3.Database('./db/texts.sqlite');
 
 app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
@@ -50,7 +50,7 @@ app.post('/register', (req, res) => {
             req.body.password = hash.data;
             fn.registerUser(req.body, userID);
 
-        }).catch((e) => {
+        }).catch((e) => { 
             console.log("error")
             console.log(e);
             res.status(200).json({

@@ -1,17 +1,17 @@
 
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
- const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/texts.sqlite');
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('./db/texts.sqlite');
 
-const functions = {
+var functions = {
 
     getReport: (week)=>{
 
     },
     createToken: (email) => {
-        const payload = {email: email};
-        const secret = "hemligkod"
+        var payload = {email: email};
+        var secret = "hemligkod"
         console.log(secret);
         return jwt.sign(payload, secret, {expiresIn: '1h'});
     },
